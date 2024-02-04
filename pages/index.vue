@@ -23,6 +23,19 @@
 
         </div>
       </div>
+
+      <div class="md:fixed w-full md:w-[400px] md:flex justify-center md:h-screen md:mx-10 right-0 top-[60px]">
+      <div class="flex flex-col gap-2">
+        <ULink>About</ULink>
+      <ULink>Education</ULink>
+      <ULink>Skiils</ULink>
+      <ULink>Portfolio</ULink>
+      <ULink>Services</ULink>
+      <ULink>Testmonis</ULink>
+      <ULink>Contact</ULink>
+      </div>
+      
+    </div>
   </main>
   <footer>footer</footer>
   </div>
