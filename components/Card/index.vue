@@ -45,7 +45,7 @@
   <UButton
   :to="github"
   target="_blank"
-    icon="i-heroicons-s-github"
+  icon="i-simple-icons-github"
     size="sm"
     color="primary"
     variant="solid"

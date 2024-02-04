@@ -1,20 +1,49 @@
 <template>
-  <div class="md:w-sm md:border-2 md:dark:border-gray-700  md:rounded-lg flex flex-col w-full  md:min-w-[300px] items-center rounded-lg gap-2 md:dark:bg-gray-800">
-    <div class="p-3 flex justify-between gap-10">
-     
-      <p>Web Developer</p>
-    </div>
-    <div class="h-[300px] w-[300px] overflow-hidden rounded-[20px]">
-      <img src="https://picsum.photos/600/800?random=1" alt="photo" class="object-contain h-full w-full rounded-lg" />
-    </div>
-    <div class="md:p-4">
-      <h1 class="text-lg font-bold">Deribew Shimelis</h1>
-      <p> <a class="text-gray-600 dark:text-gray-400 text-xs" href="mailto:deribewsoftware@gmail.com">deribewsoftware@gmail.com</a></p>
-    </div>
-    <div class="flex justify-center w-full p-2">
-      <UButton size="md">Hire me</UButton>
-    </div>
+  <div class="relative  flex justify-center w-[400px] items-center text-center ">
+    <div class="flex flex-col items-center">
+      <UAvatar
+      size="3xl"
+    src="https://avatars.githubusercontent.com/u/739984?v=4"
+    alt="Avatar"
+    class="absolute"
+  />
+  <div class="dark:bg-gray-800 mt-10">
+
+    <!-- my information -->
+    <div class="pt-10">
+      <h4 class="text-lg font-bold p-2">Deribew Shimelis</h4>
+     <h5 class="text-mdfont-semibold text-gray-600 dark:text-gray-400">Software Enginer|| Fullstack Developer</h5>
+   
   </div>
+
+  <div>
+    <ULink
+    to="/components/link"
+    active-class="text-primary"
+    inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex gap-2"
+  > <UAvatar icon="i-simple-icons-github" size="sm" />
+    Link
+  </ULink>
+  <ULink
+    to="/components/link"
+    active-class="text-primary"
+    inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex gap-2"
+  > <UAvatar icon="i-simple-icons-github" size="sm" />
+    Link
+  </ULink>
+  <ULink
+    to="/components/link"
+    active-class="text-primary"
+    inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex gap-2"
+  > <UIcon name="i-simple-icons-github" class="w-10 h-10 flex-shrink-0" />
+    Link
+  </ULink>
+   
+  </div>
+  </div>
+  </div>
+  </div>
+  
 </template>
 
 <script lang="ts" setup>
