@@ -17,52 +17,53 @@
 </template>
 
 <script lang="ts" setup>
+import Tailwind from '../../public/tailwinds.png'
+import Mongo from '../../public/mongo.png'
+import Cloudinary from '../../public/cloudinary.png'
+import Redis from '../../public/redis.png'
+import Next from '../../public/nextJs.png'
+import Express from '../../public/express.png'
+import Vercel from '../../public/vercel.png'
+import React from '../../public/react.png'
+import Bootstrap from '../../public/bootstrap.webp'
+import Transletor from '../../public/translator.png'
+
 const portfolios = [
-  {
-    cover: "/alpha.png",
-    title: "Alpha Educational Platform",
-    description: "Alpha is best for High School and University students to achieve success",
-    category: "Web Development",
-    tools: [{name:"HTML",icon:"http://sdffr.com"}, "CSS", "JavaScript", "React"],
-    demoUrl: "http://picsum.com/images",
-    github: "http://github.com/deribewsoftware/alpha"
-  },
-  {
-    cover: "https://picsum.photos/600/800?random=2",
-    title: "Beta E-commerce Website",
-    description: "Beta is an e-commerce platform for buying and selling various products",
-    category: "E-commerce",
-    tools: ["React", "Node.js", "Express", "MongoDB"],
-    demoUrl: "http://picsum.com/images",
-    github: "http://github.com/deribewsoftware/beta"
-  },
-  {
-    cover: "https://picsum.photos/600/800?random=3",
-    title: "Gamma Mobile App",
-    description: "Gamma is a mobile app designed to enhance productivity and organization",
-    category: "Mobile App Development",
-    tools: ["React Native", "Firebase", "Redux"],
-    demoUrl: "http://picsum.com/images",
-    github: "http://github.com/deribewsoftware/gamma"
-  },
-  {
-    cover: "https://picsum.photos/600/800?random=4",
-    title: "Delta Blogging Platform",
-    description: "Delta is a platform for creating and sharing blog posts",
-    category: "Content Creation",
-    tools: ["Django", "Python", "PostgreSQL", "Tailwind CSS"],
-    demoUrl: "http://picsum.com/images",
-    github: "http://github.com/deribewsoftware/delta"
-  },
-  {
-    cover: "https://picsum.photos/600/800?random=5",
-    title: "Epsilon Social Network",
-    description: "Epsilon is a social network platform connecting people worldwide",
-    category: "Social Networking",
-    tools: ["Vue.js", "Node.js", "MongoDB", "Socket.io"],
-    demoUrl: "http://picsum.com/images",
-    github: "http://github.com/deribewsoftware/epsilon"
-  }
+{
+  cover: "/alpha.png",
+  title: "Alpha Educational Platform",
+  description: "Alpha is the ideal educational platform designed to empower High School and University students on their journey to academic success. Specializing in Web Development, Alpha utilizes a powerful stack including Next.js, Express, Tailwind CSS, and MongoDB, providing a comprehensive learning experience to foster growth and achievement.",
+  category: "Web Development",
+  tools: [
+    { name: "Next.js", icon: Next},
+    { name: "Express", icon: Express },
+    { name: "MongoDB", icon:Mongo },
+    { name: "Tailwind CSS", icon: Tailwind},
+    { name: "Cloudinary", icon: Cloudinary },
+    { name: "Redis", icon: Redis },
+    { name: "Vercel", icon:Vercel},
+  ],
+  demoUrl: "https://shadcn-ui-teal.vercel.app/",
+  github: "https://github.com/deribewsoftware/shadcn_Ui"
+}
+,
+{
+  cover: Transletor,
+  title: "Geez and English To Amharic Translation",
+  description: "Solving basic problems in our world, this platform provides Geez translation using NLP AI and English to Amharic translation using the Google Translator API. Serving as a transformative solution to fundamental challenges in our global community, our platform stands at the forefront of linguistic empowerment. Seamlessly bridging communication gaps, we offer a sophisticated yet user-friendly experience for language translation.",
+  
+  category: "Web Development",
+  tools: [
+    { name: "React", icon: React },
+    { name: "Bootstrap", icon: Bootstrap },
+    { name: "Vercel", icon:Vercel }
+   
+   
+  ],
+  demoUrl: "https://webapp-telgram-bot-react-telegram-bot.vercel.app/",
+  github: "https://github.com/deribewsoftware/webapp-Telgram-bot-React-Telegram-bot-"
+}
+  
 ];
 
 </script>
