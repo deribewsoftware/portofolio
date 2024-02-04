@@ -10,27 +10,11 @@
     <div class=" md:ml-[500px] w-full md:w-7/12  overflow  dark:border-gray-800 px-2 md:px-10 border-x-2  ">
         <div class="flex flex-col gap-20 ">
           <Hero/>
-
-
-          <div class="">
-            <Header>About me</Header>
-          <About/>
-          </div>
-
-<div class="">
-  <Header>My Education</Header> <Education/>
-</div>
-
-        <div class="">
-          <Header>My Exprience</Header>
-          <Experience/>
-        </div>  
-          
-          <Skill/>
-
-          <div class="">
-  <Header>My Portofolio</Header> <Project/>
-</div>
+          <div class=""><Header>About me</Header><About/></div>
+          <div class=""><Header>My Education</Header> <Education/></div>
+          <div class=""> <Header>My Exprience</Header><Experience/></div>
+          <div class=""><Header>My Skills</Header> <Skill/></div>
+          <div class=""><Header>My Portofolio</Header> <Project/></div>
           
 
         </div>

@@ -1,8 +1,8 @@
 <template>
-  <div class="group relative border-2 border-gray-200 dark:border-gray-800 rounded-lg z-50 m-2 flex-col dark:hover:bg-gray-800 overflow-hidden">
-    <div class="flex gap-10 ">
+  <div class="group relative border-2 border-gray-200 dark:border-gray-800 rounded-lg z-50 m-2 flex-col  overflow-hidden">
+    <div class="flex gap-10  flex-col">
       <div class="p-2 space-y-2">
-      <div class="h-[400px] w-[300px] overflow-hidden rounded-lg">
+      <div class="h-[300px] overflow-hidden rounded-lg">
         <img :src="cover" class="group-hover:scale-105 transition duration-500"/>
       </div>
         <p class="text-sm px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-800 text-center">{{ category }}</p>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="absolute top-0 bottom-0 left-0 right-0 opacity-0 w-0 h-full z-0    group-hover:opacity-100 group-hover:w-full     transition-width duration-500 ease-in-out  bg-teal-700 bg-opacity-40 ">
+    <div class="absolute top-0 bottom-0 left-0 right-0 opacity-0 w-0 h-full z-0    group-hover:opacity-100 group-hover:w-full     transition-width duration-500 ease-in-out  bg-teal-700 bg-opacity-30 border-2 border-green-300 ">
 
       <div class="relative ">
         <div class="absolute top-full right-0 ">
@@ -30,7 +30,7 @@
     icon="i-heroicons-pencil-square"
     size="sm"
     color="primary"
-    variant="outline"
+    variant="solid"
     label="See Demo"
     :trailing="false"
   />
@@ -38,7 +38,7 @@
     icon="i-heroicons-s-github"
     size="sm"
     color="primary"
-    variant="outline"
+    variant="solid"
     label="Github"
     :trailing="false"
   />
