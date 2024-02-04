@@ -15,6 +15,10 @@
           <div class=""> <Header>My Exprience</Header><Experience/></div>
           <div class=""><Header>My Skills</Header> <Skill/></div>
           <div class=""><Header>My Portofolio</Header> <Project/></div>
+          <div class=""><Header>Services</Header> <Service/></div>
+          <div class=""><Header>Testimonis</Header> <Testimonis/></div>
+          <div class=""><Header>Contact</Header> <Contact/></div>
+          
           
 
         </div>
