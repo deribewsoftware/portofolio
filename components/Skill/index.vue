@@ -6,20 +6,29 @@ import React from '../../public/react.png'
 import tailwind from '../../public/tailwinds.png'
 import Bootstrap from '../../public/bootstrap.webp'
 import Mui from '../../public/materialui.png'
-const css_framework=[ {
-    name: "Tailwind CSS",
-    icon: tailwind,
-    description: "Skilled Tailwind CSS user with expertise in building modern and utility-first web interfaces. Proficient in crafting responsive designs and optimizing the development workflow with Tailwind's utility classes. Committed to creating visually appealing and efficient user interfaces using Tailwind CSS."
+import Express from '../../public/express.png'
+import Nest from '../../public/nestjs.png'
+import Golang from '../../public/golang.png'
+import Django from '../../public/django.png'
+const backend_framework=[ {
+    name: "Golang",
+    icon: Golang,
+    description: "Proficient Golang developer with expertise in building scalable and efficient backend services. Skilled in concurrency, performance optimization, and leveraging Go's standard library for robust application development. Committed to writing clean, maintainable code in the Go programming language."
   },
   {
-    name: "Bootstrap",
-    icon: Bootstrap,
-    description: "Experienced Bootstrap developer adept at creating responsive and feature-rich web applications. Proficient in utilizing Bootstrap components, grids, and utilities for efficient layout and styling. Skilled in implementing Bootstrap's responsive design principles for optimal user experiences across devices."
+    name: "Express.js",
+    icon: Express,
+    description: "Experienced Express.js developer specializing in building server-side applications with Node.js. Proficient in creating RESTful APIs and handling middleware for request processing. Skilled in optimizing routes and integrating with various databases for data persistence. Committed to delivering high-performance and scalable server-side solutions."
   },
   {
-    name: "Material-UI",
-    icon: Mui,
-    description: "Skilled Material-UI developer with expertise in implementing Google's Material Design principles in React applications. Proficient in utilizing Material-UI components for building visually appealing and consistent user interfaces. Committed to delivering high-quality React applications with Material-UI's design system."
+    name: "Nest.js",
+    icon: Nest,
+    description: "Skilled Nest.js developer leveraging the power of TypeScript for building scalable and maintainable server-side applications. Proficient in using decorators, dependency injection, and modules to structure code. Experienced in creating RESTful APIs and integrating with databases for robust backend solutions."
+  },
+  {
+    name: "Django",
+    icon: Django,
+    description: "Experienced Django developer with expertise in building web applications using Python. Proficient in Django's MVC architecture, ORM, and template engine. Skilled in creating RESTful APIs and integrating with various databases. Committed to delivering secure, scalable, and feature-rich web solutions using the Django framework."
   }
 ];
 
@@ -48,6 +57,21 @@ const webdev = [
     name: "Flutter",
     icon: "https://web-strapi.mrmilu.com/uploads/flutter_logo_470e9f7491.png",
     description: "Proficient Flutter developer with expertise in Dart programming language. Skilled in creating cross-platform mobile applications with a focus on beautiful and responsive UI. Experienced in widget-based development and integrating with native device features. Passionate about delivering smooth and engaging user experiences on iOS and Android platforms."
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+    description: "Skilled Tailwind CSS user with expertise in building modern and utility-first web interfaces. Proficient in crafting responsive designs and optimizing the development workflow with Tailwind's utility classes. Committed to creating visually appealing and efficient user interfaces using Tailwind CSS."
+  },
+  {
+    name: "Bootstrap",
+    icon: Bootstrap,
+    description: "Experienced Bootstrap developer adept at creating responsive and feature-rich web applications. Proficient in utilizing Bootstrap components, grids, and utilities for efficient layout and styling. Skilled in implementing Bootstrap's responsive design principles for optimal user experiences across devices."
+  },
+  {
+    name: "Material-UI",
+    icon: Mui,
+    description: "Skilled Material-UI developer with expertise in implementing Google's Material Design principles in React applications. Proficient in utilizing Material-UI components for building visually appealing and consistent user interfaces. Committed to delivering high-quality React applications with Material-UI's design system."
   }
 ];
 
@@ -56,12 +80,7 @@ const items = [{
   data:"Web Developement",
   label: 'Frontend Developement'
 }
- ,{
-  slot: 'CssFramework',
-  data:"next json",
-  label: 'CSS Framework'
-},
-
+ ,
 
 {
   slot: 'BackendDevelopement',
@@ -105,42 +124,22 @@ const items = [{
        
     </template>
 
-    <template #CssFramework="{ item }">
-      <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
-        <template v-for="(front,i) in webdev" :key="i">
-          <div class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group ">
-          <div class="flex justify-center p-4">
-            <img :src="front.icon" alt="angular" class="h-16 w-16">
-          </div>
-          <h1 class="text-lg font-medium w-full text-center">{{ front.name }}</h1>
-          <div class="pl-4 m-2 ">
-            <svg class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-    </svg>
-            <p class="justify-start text-gray-500 dark:text-gray-400 group-hover:dark:text-gray-200  text-sm md:text-base transition duration-300 ease-in-out">{{ front.description }}</p>
-          </div>
-        </div>
-        </template>
-  
-
-      </div>
-       
-    </template>
+    
     
 
     <template #BackendDevelopement="{ item }">
       <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
-        <template v-for="(front,i) in css_framework" :key="i">
+        <template v-for="(backend,i) in backend_framework" :key="i">
           <div class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group ">
           <div class="flex justify-center p-4">
-            <img :src="front.icon" alt="angular" class="h-16 w-16">
+            <img :src="backend.icon" alt="angular" class="h-16 w-16">
           </div>
-          <h1 class="text-lg font-medium w-full text-center">{{ front.name }}</h1>
+          <h1 class="text-lg font-medium w-full text-center">{{ backend.name }}</h1>
           <div class="pl-4 m-2 ">
             <svg class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
         <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
     </svg>
-            <p class="justify-start text-gray-500 dark:text-gray-400 group-hover:dark:text-gray-200  text-sm md:text-base transition duration-300 ease-in-out">{{ front.description }}</p>
+            <p class="justify-start text-gray-500 dark:text-gray-400 group-hover:dark:text-gray-200  text-sm md:text-base transition duration-300 ease-in-out">{{ backend.description }}</p>
           </div>
         </div>
         </template>
