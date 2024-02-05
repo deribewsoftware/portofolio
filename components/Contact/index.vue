@@ -1,7 +1,7 @@
 <template>
  
 
-<div class="w-full flex gap-20">
+<div class="w-full flex gap-20"  >
     <div class="">
         <img src="../../public/phone.png"/>
     </div>

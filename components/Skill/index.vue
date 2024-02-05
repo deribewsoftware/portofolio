@@ -147,7 +147,15 @@ const items = [{
 }
 ]
 
+const initial = ref({
+  y: 100,
+  opacity: 0,
+})
 
+const enter= ref({
+  y: 0,
+  opacity: 1,
+})
 </script>
 
 <template>
@@ -158,7 +166,7 @@ const items = [{
     <template #WebDevelopement="{ item }">
       <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
         <template v-for="(front,i) in webdev" :key="i">
-          <div class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500 ">
+          <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500 ">
           <div class="flex justify-center p-4">
             <img :src="front.icon" alt="angular" class="h-16 w-16">
           </div>
@@ -183,7 +191,7 @@ const items = [{
     <template #BackendDevelopement="{ item }">
       <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
         <template v-for="(backend,i) in backend_framework" :key="i">
-          <div class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300  transition duration-500">
+          <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300  transition duration-500">
           <div class="flex justify-center p-4">
             <img :src="backend.icon" alt="angular" class="h-16 w-16">
           </div>
@@ -214,7 +222,7 @@ const items = [{
     <template #DatabaseManagement="{ item }">
       <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
         <template v-for="(other,i) in others" :key="i">
-          <div class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500">
+          <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500">
           <div class="flex justify-center p-4">
             <img :src="other.icon" alt="angular" class="h-16 w-16">
           </div>

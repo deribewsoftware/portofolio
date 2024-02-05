@@ -2,22 +2,30 @@
   <div class="flex flex-col min-h-screen">
  
   <main class="flex-grow">
-    <div class="md:fixed w-full md:w-[400px] md:flex justify-center items-center md:h-screen md:mx-10">
+    <div class="md:fixed w-full md:w-[300px] md:flex justify-center items-center md:h-screen md:mx-10">
       <CardMyCard/>
       
     </div>
 
-    <div class=" md:ml-[500px] w-full md:w-7/12  overflow  dark:border-gray-800 px-2 md:px-10 border-x-2  ">
-        <div class="flex flex-col gap-20 ">
+    <div class=" md:ml-[400px] w-full md:w-7/12  overflow  dark:border-gray-800 px-2 md:px-10 border-x-2  ">
+        <div class=" md:py-20">
           <Hero/>
-          <div class=""><Header>About me</Header><About/></div>
-          <div class=""><Header>My Education</Header> <Education/></div>
-          <div class=""> <Header>My Exprience</Header><Experience/></div>
-          <div class=""><Header>My Skills</Header> <Skill/></div>
-          <div class=""><Header>My Portofolio</Header> <Project/></div>
-          <div class=""><Header>Services</Header> <Service/></div>
-          <div class=""><Header>Testimonis</Header> <Testimonis/></div>
-          <div class=""><Header>Contact</Header> <Contact/></div>
+          <div
+           v-motion 
+           :initial="initial"
+           :visibleOnce="visible" class="py-20" id="about">
+            <Header>About me</Header>
+            <About/>
+          </div>
+
+          <divv-motion :initial="initial" :visibleOnce="visible"  class="py-20" id="education"><Header>My Education</Header> <Education/></divv-motion>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="exprience"> <Header>My Exprience</Header><Experience/></div>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="skill"><Header>My Skills</Header> <Skill/></div>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="portfolio"><Header>My Portofolio</Header> <Project/></div>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="service"><Header>Services</Header> <Service/></div>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="testmony"><Header>Testimonis</Header> <Testimonis/></div>
+          <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="contact"><Header>Contact</Header> <Contact/></div>
+          <div class="h-[100px]"></div>
           
           
 
@@ -26,13 +34,20 @@
 
       <div class="md:fixed w-full md:w-[400px] md:flex justify-center md:h-screen md:mx-10 right-0 top-[60px]">
       <div class="flex flex-col gap-2">
-        <ULink>About</ULink>
-      <ULink>Education</ULink>
-      <ULink>Skiils</ULink>
-      <ULink>Portfolio</ULink>
-      <ULink>Services</ULink>
-      <ULink>Testmonis</ULink>
-      <ULink>Contact</ULink>
+        <template v-for="(navbar,index) in navbardata" :key="index">
+          <ULink
+          active-class="text-primary"
+    inactive-class="
+    text-gray-500 
+    dark:text-gray-400 
+    hover:text-gray-700 
+    dark:hover:text-gray-200" 
+    
+    :to="navbar.href">
+    {{ navbar.name }}
+  </ULink>
+        </template>
+      
       </div>
       
     </div>
@@ -42,6 +57,73 @@
 </template>
 
 <script lang="ts" setup>
+const scrollBg=ref(false);
+const setScrollBg=(value: boolean)=>{
+  scrollBg.value=value;
+}
+onMounted(()=>{
+  window.addEventListener("scroll",()=>{
+    return window.scrollY>50? setScrollBg(true):setScrollBg(false);
+  })
+})
+
+
+
+const initial = ref({
+  y: 100,
+  opacity: 0,
+})
+
+const visible= ref({
+  y: 0,
+  opacity: 1,
+})
+
+const router=useRouter()
+console.log("router: ", router.currentRoute.value)
+useSeoMeta({
+  title:"Deribew Shimelis",
+  ogTitle:"Deribew Shimelis",
+  description:" I am Software Enginer || Fullstack Developer",
+  ogDescription:" I am Software Enginer || Fullstack Developer"
+
+})
+
+
+const navbardata=[
+  {
+    name:"About",
+    href:"#about"
+  },{
+    name:"Education",
+    href:"#education"
+  },{
+    name:"Exprience",
+    href:"#exprience"
+  },{
+    name:"Skill",
+    href:"#skill"
+  },{
+    name:"Portfolio",
+    href:"#portfolio"
+  },
+  {
+    name:"Service",
+    href:"#service"
+  },
+  {
+    name:"Testmonies",
+    href:"#testmony"
+  },
+  {
+    name:"Contact",
+    href:"#contact"
+  },
+]
+
+const colorMode=useColorMode()
+
+
 
 </script>
 
