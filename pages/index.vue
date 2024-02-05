@@ -1,4 +1,5 @@
 <template>
+  
   <div class="flex flex-col min-h-screen">
  
   <main class="flex-grow">
@@ -33,12 +34,17 @@
       </div>
 
       <div class="md:fixed w-full md:w-[400px] md:flex justify-center md:h-screen md:mx-10 right-0 top-[60px]">
-      <div class="flex flex-col gap-2">
-        <template v-for="(navbar,index) in navbardata" :key="index">
+      <div class="flex flex-col">
+        <template v-for="(navbar,index) in navbardata" :key="index" class="border-l">
           <ULink
-          active-class="text-primary"
+        
+          exact-hash
+          exactActiveClass="bg-rose-400"
+
+          activeClass="text-primary"
     inactive-class="
     text-gray-500 
+    
     dark:text-gray-400 
     hover:text-gray-700 
     dark:hover:text-gray-200" 
