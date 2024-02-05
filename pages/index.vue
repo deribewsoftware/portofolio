@@ -39,7 +39,7 @@
           <ULink
         
           exact-hash
-          exactActiveClass="bg-rose-400"
+          
 
           activeClass="text-primary"
     inactive-class="
