@@ -1,81 +1,105 @@
 <script lang="ts" setup>
-import Facebook from '../../public/facebook.png';
-import Twitter from '../../public/twitter.png';
-import LinkdeIn from '../../public/linkedin.png';
-import Telegram from '../../public/telegram.png';
-import Instagram from '../../public/instagram.png';
-import Github from '../../public/github.png'
 
 
-const mysocialMedia=[
-{
-    url:"https://github.com/deribewsoftware",
-    image:Github
-  },
-  {
-    url:"https://www.linkedin.com/in/deribew-shimelis-191970260/",
-    image:LinkdeIn
-  },{
-    url:"https://t.me/Derishemi",
-    image:Telegram
-  },
-  {
-    url:"https://www.instagram.com/deribew5307/",
-    image:Instagram
-  },
-  {
-    url:"https://twitter.com/ShimelisDe14559",
-    image:Twitter
-  }
-]
+// const mysocialMedia=[
+// {
+//     url:"https://github.com/deribewsoftware",
+//     image:Github
+//   },
+//   {
+//     url:"https://www.linkedin.com/in/deribew-shimelis-191970260/",
+//     image:LinkdeIn
+//   },{
+//     url:"https://t.me/Derishemi",
+//     image:Telegram
+//   },
+//   {
+//     url:"https://www.instagram.com/deribew5307/",
+//     image:Instagram
+//   },
+//   {
+//     url:"https://twitter.com/ShimelisDe14559",
+//     image:Twitter
+//   }
+// ]
 </script>
 
 
 <template>
   <div class="relative  flex justify-center w-full items-center text-center ">
-    <div class="flex  flex-col items-center w-full">
+    <div class="flex  flex-col items-center w-full mx-4 md:mx-0 rounded-lg md:rounded-[0px]">
       
 
   <img
    class="
-   border-2
+   md:border-2
    dark:border-gray-500
 
-   w-[120px]
-    h-[120px]
-    rounded-full
-    absolute
+   md:w-[120px]
+    md:h-[120px]
+    md:rounded-full
+    md:absolute
    " 
   src="https://avatars.githubusercontent.com/u/739984?v=4"
    alt="Rounded avatar">
   <div class="
-  dark:bg-gray-800 
-  mt-20
-   p-2 border-2
-   dark:border-gray-500
-   rounded-lg
+  md:dark:bg-gray-800 
+  md:mt-20
+   p-2 
+   md:border-2
+   md:dark:border-gray-500
+   md:rounded-lg
    "
    
    >
 
     <!-- my information -->
     <div class="pt-10">
-      <h4 class="text-lg font-bold p-2">Deribew Shimelis</h4>
+      <h4 class="text-2xl md:text-lg font-bold p-2">Deribew Shimelis</h4>
     
      <h5 class="text-mdfont-semibold text-gray-600 dark:text-gray-400">Software Enginer|| Fullstack Developer</h5>
-     <hr class="h-[0.5px] dark:text-gray-700 m-2"/>
+    
 
-     <div class="flex gap-2 my-4 justify-center">
-      <template v-for="(social,i) in mysocialMedia" :key="i">
+     <div class="flex gap-2 my-4 justify-center border-y p-2  dark:border-gray-700">
+      <!-- <template v-for="(social,i) in mysocialMedia" :key="i">
         <CardCircleLink
         :link="'mailto:'+social.url"
         :image="social.image"
         />
-      </template>
+      </template> -->
+
+      <NuxtLink to="https://github.com/deribewsoftware" target="_blank" class=" rounded-full hover:bg-green-400  hover:overflow-hidden   hover:bg-green-400">
+        <Icon name="uil:github" size="30px"/>
+      </NuxtLink>
+
+
+      <NuxtLink to="https://www.linkedin.com/in/deribew-shimelis-191970260/" target="_blank" class=" rounded-full  hover:bg-green-400 hover:overflow-hidden">
+        <Icon name="uil:linkedin" size="30px"/>
+      </NuxtLink >
+
+
+      <NuxtLink to="https://t.me/Derishemi" target="_blank" class=" rounded-full  hover:bg-green-400 hover:overflow-hidden">
+        <Icon name="uil:telegram" size="30px"/>
+      </NuxtLink>
+
+
+      <NuxtLink to="https://www.instagram.com/deribew5307/" target="_blank" class=" rounded-full  hover:bg-green-400 hover:overflow-hidden">
+        <Icon name="uil:instagram" size="30px"/>
+      </NuxtLink>
+      <NuxtLink to="https://www.facebook.com/profile.php?id=100087997909096" target="_blank" class=" rounded-full  hover:bg-green-400 hover:overflow-hidden">
+        <Icon name="uil:facebook" size="30px"/>
+      </NuxtLink>
+      <NuxtLink to="https://twitter.com/ShimelisDe14559" target="_blank" class=" rounded-full  hover:bg-green-400 hover:overflow-hidden">
+        <Icon name="uil:twitter" size="30px"/>
+      </NuxtLink>
+
+      
+     
+      
       
      </div>
 
-     <hr class="h-[0.5px] dark:text-gray-700 m-2"/>
+    
      <div class="flex flex-col gap-2 w-full">
       
       
@@ -97,6 +121,10 @@ const mysocialMedia=[
 
     
 
+     </div>
+
+     <div class="flex justify-center my-4">
+      <NuxtLink class="text-base  bg-gradient-to-r from-green-400 via-rose-400 to-blue-400 text-white hover:border border-green-300 px-2 py-1 text-center rounded-full font-bold">My Resume</NuxtLink>
      </div>
    
   </div>

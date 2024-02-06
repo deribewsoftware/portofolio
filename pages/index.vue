@@ -1,7 +1,7 @@
 <template>
   
   <div class="flex flex-col min-h-screen">
- 
+<Navbar/>
   <main class="flex-grow">
     <div class="md:fixed w-full md:w-[300px] md:flex justify-center items-center md:h-screen md:mx-10">
       <CardMyCard/>
@@ -26,14 +26,14 @@
           <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="service"><Header>Services</Header> <Service/></div>
           <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="testmony"><Header>Testimonis</Header> <Testimonis/></div>
           <div v-motion :initial="initial" :visibleOnce="visible" class="py-20" id="contact"><Header>Contact</Header> <Contact/></div>
-          <div class="h-[100px]"></div>
+          
           
           
 
         </div>
       </div>
 
-      <div class="md:fixed w-full md:w-[400px] md:flex justify-center md:h-screen md:mx-10 right-0 top-[60px]">
+      <div class="hidden md:block md:fixed w-full md:w-[400px] md:flex justify-center md:h-screen md:mx-10 right-0 top-[60px]">
       <div class="flex flex-col">
         <template v-for="(navbar,index) in navbardata" :key="index" class="border-l">
           <ULink
@@ -58,7 +58,8 @@
       
     </div>
   </main>
-  <footer>footer</footer>
+  <Footer/>
+ 
   </div>
 </template>
 
