@@ -124,7 +124,9 @@
      </div>
 
      <div class="flex justify-center my-4">
-      <NuxtLink class="text-base  bg-gradient-to-r from-green-400 via-rose-400 to-blue-400 text-white hover:border border-green-300 px-2 py-1 text-center rounded-full font-bold">My Resume</NuxtLink>
+      <NuxtLink download
+      
+      class="text-base  bg-gradient-to-r from-green-400 via-rose-400 to-blue-400 text-white hover:border border-green-300 px-2 py-1 text-center rounded-full font-bold">My Resume</NuxtLink>
      </div>
    
   </div>
