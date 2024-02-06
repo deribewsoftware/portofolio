@@ -100,7 +100,7 @@
      </div>
 
     
-     <div class="flex flex-col gap-2 w-full">
+     <div class="flex flex-col gap-2 w-full my-10">
       
       
      <CardLinkIcon name="+251930793119">

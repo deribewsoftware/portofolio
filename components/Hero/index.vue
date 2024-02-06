@@ -9,16 +9,33 @@
       <img src="../../public/banner2.png"/>
     </div>
     <div class="flex gap-6 flex-wrap justify-center">
-      <HeroMyProgress/>
-      <HeroMyProgress/>
-      <HeroMyProgress/>
-      <HeroMyProgress/>
+     <template v-for="(data,index) in myInfoData" :key="index">
+      <HeroMyProgress
+      :label="data.label"
+      :value="data.value"
+      />
+     </template>
+      
     </div>
     
   </div>
 </template>
 
 <script lang="ts" setup>
+const myInfoData=[
+  {
+    label:"Years Work Experience",
+    value:"2"
+  },
+  {
+    label:"Completed projects",
+    value:"5"
+  },
+  {
+    label:"Company participated",
+    value:"2"
+  }
+]
 
 </script>
 
