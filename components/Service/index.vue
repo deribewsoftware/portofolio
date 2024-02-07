@@ -15,6 +15,9 @@
       <Header>Why Choose My Services</Header>
       <template>
   <UAccordion
+  color="rose"
+  class="border-rose-400"
+    variant="outline"
     open-icon="i-heroicons-plus"
     close-icon="i-heroicons-minus"
     :items="items"

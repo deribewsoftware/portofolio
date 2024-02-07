@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-1 xl:grid-cols-2 gap-20">
+  <div class="px-4 md:px-10 grid grid-cols-1  md:grid-cols-2 gap-16">
     <template v-for="(testmony,index) in testimonies" :key="index">
       <TestimonisCard
       :name="testmony.name"

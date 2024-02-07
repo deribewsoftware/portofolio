@@ -1,11 +1,11 @@
 <template>
   <div>
     
-<ol class="relative border-s border-gray-200 dark:border-green-400">                  
+<ol class="relative border-s border-gray-200  border-rose-400 dark:border-green-400">                  
    <template v-for="(exprience,index) in myExperiences" :key="index">
     <li class="mb-10 ms-4">
-        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-green-400"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-green-400">{{ exprience.date }}</time>
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 bg-rose-400 dark:bg-green-400"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 text-rose-400 dark:text-green-400">{{ exprience.date }}</time>
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ exprience.title }}</h3>
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{ exprience.description }}</p>
         
