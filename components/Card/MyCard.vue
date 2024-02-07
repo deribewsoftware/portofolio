@@ -10,30 +10,30 @@
 
   <img
    class="
-   md:border-2
+   lg:border-2
    dark:border-gray-500
 
-   md:w-[120px]
-    md:h-[120px]
-    md:rounded-full
-    md:absolute
+   lg:w-[120px]
+   lg:h-[120px]
+   lg:rounded-full
+   lg:absolute
    " 
   src="https://avatars.githubusercontent.com/u/739984?v=4"
    alt="Rounded avatar">
   <div class="
-  md:dark:bg-gray-800 
-  md:mt-20
+  lg:dark:bg-gray-800 
+  lg:mt-20
    p-2 
-   md:border-2
-   md:dark:border-gray-500
-   md:rounded-lg
+   lg:border-2
+   lg:dark:border-gray-500
+   lg:rounded-lg
    "
    
    >
 
     <!-- my information -->
     <div class="pt-10">
-      <h4 class="text-2xl md:text-lg font-bold p-2">Deribew Shimelis</h4>
+      <h4 class="text-2xl lg:text-lg font-bold p-2">Deribew Shimelis</h4>
     
      <h5 class="text-mdfont-semibold text-gray-600 dark:text-gray-400">Software Enginer|| Fullstack Developer</h5>
     

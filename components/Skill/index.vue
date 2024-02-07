@@ -159,12 +159,12 @@ const enter= ref({
 </script>
 
 <template>
-  <UTabs :items="items" class="w-full">
+  <UTabs :items="items" class="w-full " >
 
 
 
     <template #WebDevelopement="{ item }">
-      <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
+      <div class="grid grid-cols-1  md:grid-cols-2 gap-4 mt-20">
         <template v-for="(front,i) in webdev" :key="i">
           <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500 ">
           <div class="flex justify-center p-4">
@@ -189,7 +189,7 @@ const enter= ref({
     
 
     <template #BackendDevelopement="{ item }">
-      <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
+      <div class="grid grid-cols-1  md:grid-cols-2 gap-4 mt-20">
         <template v-for="(backend,i) in backend_framework" :key="i">
           <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300  transition duration-500">
           <div class="flex justify-center p-4">
@@ -220,7 +220,7 @@ const enter= ref({
 
 
     <template #DatabaseManagement="{ item }">
-      <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-4 gap-10 mt-20">
+      <div class="grid grid-cols-1  md:grid-cols-2 gap-4 mt-20">
         <template v-for="(other,i) in others" :key="i">
           <div v-motion :initial="initial" :enter="enter" class="border-2 dark:border-gray-700 rounded-lg bg-gray-800 group hover:dark:border-teal-300 transition duration-500">
           <div class="flex justify-center p-4">

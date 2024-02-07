@@ -1,5 +1,5 @@
 <template>
-  <div class=" grid grid-cols-1 lg:grid-cols-2 gap-10">
+  <div class=" grid grid-cols-1 2xl:grid-cols-2 gap-10">
  <template v-for="(portofolio,i) in portfolios" :key="i">
   <Card 
   :title="portofolio.title"

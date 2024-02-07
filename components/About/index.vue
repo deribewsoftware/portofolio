@@ -2,10 +2,10 @@
   
  
     <div class="flex gap-10 w-full items-center justify-center">
-      <div class="hidden md:block">
+      <div class=" hidden  md:block lg:hidden xl:block">
         <img src="https://avatars.githubusercontent.com/u/739984?v=4" alt="" class="rounded-lg">
       </div>
-      <div class="md:px-2 w-full  md:border-l-2 dark:border-gray-700">
+      <div class="md:px-2 w-full  md:border-l-2 lg:border-l-0 xl:border-l-2 dark:border-gray-700">
         <h5 class="text-3xl  font-bold p-2 text-gray-600 dark:text-gray-400">Every great design begin with
 an even better story</h5>
 

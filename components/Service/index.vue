@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <div class="grid grid-cols-1  md:grid-cols-2 gap-4">
 <template v-for="(service,i) in serviceData" :key="i">
   <ServiceCard
   :image="service.image"

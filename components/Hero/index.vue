@@ -1,11 +1,11 @@
 <template>
-  <div id="hero" class="md:h-screen flex flex-col md:gap-10 items-center justify-center mt-10 pt-10">
-    <h1 class="hidden md:block text-center mb-4 text-2xl md:text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">I am, Deribew Shimelis</h1>
+  <div id="hero" class="w-full 2xl:h-screen flex flex-col 2xl:gap-10 items-center justify-center mt-10 pt-10">
+    <h1 class="hidden lg:block text-center mb-4 text-2xl md:text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">I am, Deribew Shimelis</h1>
 
 
-    <h2 class="hidden md:block text-xl px-6 md:text-3xl font-bold dark:text-gray-400"> I am, Software Engineer || Fullstack Developer</h2>
+    <h2 class="hidden lg:block text-xl px-6 lg:text-3xl font-bold dark:text-gray-400"> I am, Software Engineer || Fullstack Developer</h2>
 
-    <div class="hidden md:block">
+    <div class="hidden lg:block">
       <img src="../../public/banner2.png"/>
     </div>
     <div class="flex gap-6 flex-wrap justify-center">

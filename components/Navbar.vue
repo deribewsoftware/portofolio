@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full fixed z-50 bg-white dark:bg-gray-900 dark:border-gray-800  block flex justify-end md:hidden  border-b">
+  <header class="w-full fixed z-50 bg-white dark:bg-gray-900 dark:border-gray-800  block flex justify-end 2xl:hidden  border-b">
    
     <nav class="flex gap-2 p-2">
       <UDropdown 
