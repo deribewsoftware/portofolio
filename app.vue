@@ -2,7 +2,7 @@
   
   <div class="bg-gray-50 dark:bg-gray-900 font-serif flex flex-col min-h-screen">
 <Navbar/>
-  <main class="w-full flex-grow xl:p-20 xl:px-4  flex flex-wrap justify-center">
+  <main class="w-full flex-grow xl:px-20 xl:px-4  flex flex-wrap justify-center">
     <div class=" lg:w-1/12 2xl:w-1/12 lg:flex   justify-center ">
       <div class="lg:fixed  lg:left-16 lg:w-[200px] lg:flex   justify-center  items-center lg:h-screen ">
       <CardMyCard/>
