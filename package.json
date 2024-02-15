@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@sidebase/nuxt-pdf": "^0.1.2",
+    "dayjs-nuxt": "^2.1.9",
     "nuxt": "^3.10.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
@@ -18,6 +19,7 @@
   "dependencies": {
     "@nuxt/ui": "^2.13.0",
     "@vueuse/motion": "^2.0.0-beta.29",
+    "dayjs": "^1.11.10",
     "nuxt-icon": "^0.6.8"
   }
 }

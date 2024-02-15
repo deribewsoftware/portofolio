@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules:["@nuxt/ui", "nuxt-icon",'@vueuse/motion/nuxt','@sidebase/nuxt-pdf'],
+  modules:["@nuxt/ui", "nuxt-icon",'@vueuse/motion/nuxt','@sidebase/nuxt-pdf','dayjs-nuxt'],
   runtimeConfig: {
     public: {
       motion: {

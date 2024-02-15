@@ -14,7 +14,7 @@
 </svg>
 
 
-   
+
 
     <template  #item="{ item }">
      
@@ -33,7 +33,19 @@
 
 
     </template>
-  </UDropdown>  
+  </UDropdown>
+  
+  
+          <UButton
+      :icon="isDark ? 'i-heroicons-sun-20-solid': 'i-heroicons-moon-20-solid'"
+      color="gray"
+      variant="ghost"
+      aria-label="Theme"
+      class="p
+      mb-2"
+      @click="isDark = !isDark"
+    />
+       
     </nav>
   </header>
 </template>
@@ -69,6 +81,16 @@ const navbardata=[
     href:"#contact"
   }],
 ]
+
+const colorMode = useColorMode()
+const isDark = computed({
+  get () {
+    return colorMode.value === 'dark'
+  },
+  set () {
+    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  }
+})
 
 </script>
 
