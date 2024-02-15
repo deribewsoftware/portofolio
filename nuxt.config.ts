@@ -21,6 +21,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  runtimeConfig: {
+    jwtAccessToken:process.env.JWT_ACCESS_TOKEN_SECRET_KEY,
+    jwtRefreshToken:process.env.JWT_REFRESH_TOKEN_SECRET_KEY
   }
 
 })
