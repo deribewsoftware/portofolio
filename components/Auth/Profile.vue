@@ -55,10 +55,23 @@ const items = [
 ]
 
 
-const {useAuthUser}=useAuth()
+const {useAuthUser,initAuth}=useAuth()
 const user=useAuthUser()
 
-console.log("user: " , user)
+onBeforeUnmount(()=>{
+  initAuth();
+})
+
+console.log("user: " , user.value);
+
+
+
+
+
+
+definePageMeta({
+  middleware: "auth",
+});
 </script>
 
 

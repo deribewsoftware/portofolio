@@ -1,3 +1,5 @@
+import { useUseFetchApi } from "./useFetchApi";
+
 export default()=>{
 
   const useAuthToken=()=>useState("auth_token");
@@ -28,7 +30,7 @@ return new Promise(async (resolve, reject)=>{
     })
 setToken(data.accessToken);
 setUser(data.user);
-console.log(data);
+
 resolve(true);
 
   }
@@ -57,10 +59,25 @@ resolve(true);
 
 
 
+  const getUser=()=>{
+    return new Promise(async (resolve, reject)=>{
+      try{
+     const data= await $fetch("/api//api/auth/user")
+        setUser(data);
+        
+        resolve(true);
+      }
+      catch (err){
+        reject(err);
+      }
+    })
+  }
+
   const initAuth =()=>{
     return new Promise(async (resolve, reject)=>{
       try{
         await refreshToken();
+        await getUser();
         resolve(true);
       }
       catch (err){
@@ -74,6 +91,7 @@ resolve(true);
   return {
     login,
     useAuthUser,
-    initAuth
+    initAuth,
+    useAuthToken
   }
 }

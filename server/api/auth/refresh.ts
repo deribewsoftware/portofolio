@@ -4,8 +4,8 @@ import { getUserById } from "~/lib/user";
 
 export default defineEventHandler(async (event) => {
 
-  const cookies=getCookie(event, 'refresh_token');
-  const refreshToken=cookies
+  const cookies = parseCookies(event)
+  const refreshToken=cookies.refresh_token
 
   if (!refreshToken){
     return sendError(event,createError({
