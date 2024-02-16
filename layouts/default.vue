@@ -80,7 +80,22 @@
     to="/tutorial">
    Tutorial
   </ULink>
-      
+  <ULink
+        
+        exact-hash
+        
+
+        activeClass="text-rose-400 dark:text-primary"
+  inactive-class="
+  text-gray-500 
+  
+  dark:text-gray-400 
+  hover:text-gray-700 
+  dark:hover:text-gray-200" 
+  
+  to="/dashboard">
+Dashboard
+</ULink>
       </div>
       
     </div>
