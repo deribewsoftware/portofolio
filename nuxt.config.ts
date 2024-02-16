@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  
+ 
   devtools: { enabled: true },
   modules:["@nuxt/ui", "nuxt-icon",'@vueuse/motion/nuxt','@sidebase/nuxt-pdf','dayjs-nuxt'],
   runtimeConfig: {
@@ -20,11 +22,8 @@ export default defineNuxtConfig({
           }
         }
       }
-    }
-  },
-  runtimeConfig: {
+    },
     jwtAccessToken:process.env.JWT_ACCESS_TOKEN_SECRET_KEY,
     jwtRefreshToken:process.env.JWT_REFRESH_TOKEN_SECRET_KEY
   }
-
 })

@@ -3,6 +3,7 @@ import bcrypt from "bcrypt"
 import { userTransformer } from "~/lib/transformers/user.transformer"
 import { GenerateTokens } from "~/lib/tokens/generateTokens"
 import { RefreshToken } from "~/lib/refreshToken"
+import { SetRefreshToken } from "~/lib/tokens/refreshToken"
 export default defineEventHandler(async (event) => {
   const body =await readBody(event)
   const {email, password}=body
@@ -45,6 +46,8 @@ export default defineEventHandler(async (event) => {
     userId:user!.id
   })
 
+  // save token in Cookie
+  SetRefreshToken(event,refreshToken)
 
 
   return {

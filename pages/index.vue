@@ -1,6 +1,9 @@
 <template>
   
   <div class=" md:py-20">
+    <div class="absolute w-[350px] md:w-[400px]">
+      <AuthLogin/>
+    </div>
           <Hero/>
           <div
            v-motion 
