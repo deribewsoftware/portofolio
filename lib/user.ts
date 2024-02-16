@@ -21,3 +21,12 @@ export const getUserByEmail=(email:string)=>{
   })
 
 }
+
+
+// get user by id
+
+export const getUserById=(id:any)=>{
+  return prisma.user.findFirst({
+    where: {id:id}
+  })
+}

@@ -18,6 +18,28 @@ const RefreshToken=(user:any)=>{
 }
 
 
+export const decodeRefreshToken=(token:string)=>{
+  const config=useRuntimeConfig()
+  try{
+    return jwt.verify(token,config.jwtRefreshToken)
+  }
+  catch(err){
+    return null;
+  }
+
+}
+export const decodeAccessToken=(token:string)=>{
+  const config=useRuntimeConfig()
+  try{
+    return jwt.verify(token,config.jwtAccessToken)
+  }
+  catch(err){
+    return null;
+  }
+
+}
+
+
 export const GenerateTokens=(user:any)=>{
   const accessToken=AccessToken(user);
   const refreshToken=RefreshToken(user);

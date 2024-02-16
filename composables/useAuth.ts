@@ -40,8 +40,40 @@ resolve(true);
 })
 
   }
+
+
+  const refreshToken =()=>{
+    return new Promise(async (resolve, reject)=>{
+      try{
+        const data= await $fetch("/api/auth/refresh")
+        setToken(data.accessToken);
+        resolve(true);
+      }
+      catch (err){
+        reject(err);
+      }
+    })
+  }
+
+
+
+  const initAuth =()=>{
+    return new Promise(async (resolve, reject)=>{
+      try{
+        await refreshToken();
+        resolve(true);
+      }
+      catch (err){
+        reject(err);
+      }
+    })
+  }
+
+
+
   return {
     login,
-    useAuthUser
+    useAuthUser,
+    initAuth
   }
 }

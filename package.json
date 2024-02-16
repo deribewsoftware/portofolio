@@ -26,6 +26,7 @@
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.10",
     "jsonwebtoken": "^9.0.2",
-    "nuxt-icon": "^0.6.8"
+    "nuxt-icon": "^0.6.8",
+    "url-pattern": "^1.0.3"
   }
 }
