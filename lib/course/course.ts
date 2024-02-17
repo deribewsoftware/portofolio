@@ -2,10 +2,10 @@ import { prisma } from "../prisma.db"
 
 
 // create course object
-export const createCourse=(courseData:any)=>{
+export const createCourse=(courseData:any,userId:string)=>{
 
   return prisma.course.create({
-    data: courseData
+    data: {...courseData,userId:userId}
   })
 
 }
@@ -17,7 +17,9 @@ export const getAllCourses=()=>{
 
 // get course by Id
 export const getCourseById=(id:string)=>{
+  
   return prisma.course.findFirst({
+
     where:{id:id}
   })
 }

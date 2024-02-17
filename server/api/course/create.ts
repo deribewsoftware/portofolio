@@ -1,4 +1,5 @@
 import { createCourse } from "~/lib/course/course";
+import { getRefreshTokenByToken } from "~/lib/refreshToken";
 
 export default defineEventHandler(async (event) => {
 
@@ -15,8 +16,26 @@ export default defineEventHandler(async (event) => {
   }
 
   const courseData={cover,category,description,requriments,whoUseIt,level,price,title}
+  const refreshToken=parseCookies(event)
+  if (!refreshToken){
+    return sendError(event,
+      createError({
+        statusCode:400,
+        statusMessage:"Unathorized user credentials"
+      }))
+  }
 
-  const newCourse = await createCourse(courseData)
+  const token= await getRefreshTokenByToken(refreshToken.refresh_token)
+
+  if (!token){
+    return sendError(event,
+      createError({
+        statusCode:400,
+        statusMessage:"Unathorized user credentials"
+      }))
+  }
+
+  const newCourse = await createCourse(courseData,token.userId)
   if (!newCourse){
     return sendError(event,
       createError({
@@ -31,6 +50,9 @@ export default defineEventHandler(async (event) => {
 
 
   catch(err){
+    const refreshToken=parseCookies(event)
+    console.log("err",err)
+    console.log("refresh_token",refreshToken.refresh_token)
     return sendError(event,
       createError({
         statusCode:500,

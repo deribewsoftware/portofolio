@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-start items-center py-20">
+  <div class="min-h-screen flex justify-start items-center py-20">
     <div class="flex flex-col justify-start items-center gap-4">
       <h1>List of Courses</h1>
       
@@ -20,7 +20,7 @@
     :sort-button="{ icon: 'i-heroicons-sparkles-20-solid', color: 'primary', variant: 'outline', size: '2xs', square: false, ui: { rounded: 'rounded-full' } }"
     class="w-full"
     :columns="selectedColumns"
-    :rows="filteredRows"
+    :rows="courses"
   />
 
 
@@ -37,7 +37,14 @@ definePageMeta({
   layout:"dashboard"
 })
 
-const columns = [{ key: 'id', label: 'ID' }, { key: 'name', label: 'Name', sortable: true }, { key: 'title', label: 'Title', sortable: true }, { key: 'email', label: 'Email', sortable: true }, { key: 'role', label: 'Role' }]
+const columns = [{ key: 'id', label: 'ID' },
+ { key: 'title', label: 'Subject', sortable: true },
+  { key: 'category', label: 'Category', sortable: true },
+  { key: 'level', label: 'Level', sortable: true },
+   { key: 'email', label: 'Learners', sortable: true }, 
+   { key: 'price', label: 'Price', sortable: true },
+   { key: 'email', label: 'Chapters', sortable: true }, 
+   { key: 'role', label: 'Action' }]
 
 
 const selectedColumns = ref([...columns])
@@ -45,17 +52,26 @@ const people = [{ id: 1, name: 'Lindsay Walton', title: 'Front-end Developer', e
 
 const q = ref('')
 
-const filteredRows = computed(() => {
-  if (!q.value) {
-    return people
-  }
+// const filteredRows = computed(() => {
+//   if (!q.value) {
+//     return courses
+//   }
 
-  return people.filter((person) => {
-    return Object.values(person).some((value) => {
-      return String(value).toLowerCase().includes(q.value.toLowerCase())
-    })
-  })
+//   return courses.values.filter((course:any) => {
+//     return Object.values(course).some((value) => {
+//       return String(value).toLowerCase().includes(q.value.toLowerCase())
+//     })
+//   })
+// })
+
+
+const {pending,data:courses}=useFetch("/api/course/list",{
+  lazy:false,
+  server:false,
 })
+
+
+console.log("courses",courses)
 </script>
 
 <style>

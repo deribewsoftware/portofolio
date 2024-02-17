@@ -32,7 +32,7 @@ if (!user){
 
 }
   return {
-    user:user,
+    ...user
     
    
 }

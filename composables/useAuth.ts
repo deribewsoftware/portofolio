@@ -30,11 +30,13 @@ return new Promise(async (resolve, reject)=>{
     })
 setToken(data.accessToken);
 setUser(data.user);
-
+localStorage.setItem("user",JSON.stringify(data.user));
+console.log("login data",data);
 resolve(true);
 
   }
   catch (err){
+    console.log("login err",err);
     reject(err);
 
   }
@@ -49,6 +51,7 @@ resolve(true);
       try{
         const data= await $fetch("/api/auth/refresh")
         setToken(data.accessToken);
+        
         resolve(true);
       }
       catch (err){
@@ -62,7 +65,7 @@ resolve(true);
   const getUser=()=>{
     return new Promise(async (resolve, reject)=>{
       try{
-     const data= await $fetch("/api//api/auth/user")
+     const data= await $fetch("/api/auth/user")
         setUser(data);
         
         resolve(true);
@@ -72,6 +75,10 @@ resolve(true);
       }
     })
   }
+
+
+
+
 
   const initAuth =()=>{
     return new Promise(async (resolve, reject)=>{

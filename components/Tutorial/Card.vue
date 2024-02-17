@@ -1,10 +1,8 @@
 <template>
-  <div class="w-full
+  <NuxtLink :to="`/tutorial/course/${id}`" class="w-full
    
  
-  flex
-  flex-col
-gap-6
+  
 group
   border
    rounded-lg
@@ -24,14 +22,14 @@ group
   ">
 
   <div class="h-48 w-full overflow-hidden rounded-t-lg">
-    <img src="https://picsum.photos/600/800?random=6" alt="" class="w-full h-full group-hover:scale-105 transition duration-300">
+    <img :src="cover" alt="" class="w-full h-full group-hover:scale-105 transition duration-300">
   </div>
-  <div class="pb-4 space-y-4">
+  <div class="pb-4 mt-4 space-y-4">
     <div class="flex justify-between px-4">
-      <p class="text-gray-600 dark:text-gray-400 font-semibold">Category</p>
-       <p class=" text-green-400 font-semibold ">566ETB</p></div>
+      <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">{{ category }}</p>
+       <p class=" text-green-400 font-semibold ">{{price}}ETB</p></div>
 
-    <h1 class="text-lg font-semibold text-center w-full">React Complte Cpurses wit TypeScript and Vite</h1>
+    <h1 class="text-lg font-semibold text-center w-full">{{ title }}</h1>
 
 
 <div class="flex items-center text-center justify-center">
@@ -60,10 +58,40 @@ group
  
 
     
-  </div>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>
+defineProps({
+
+  id:{
+    type:String,
+    require:true,
+  },
+
+  title:{
+    type:String,
+    require:true,
+  },
+  cover:{
+    type:String,
+   
+  },
+  rating:{
+    type:Number,
+    
+  },
+  category:{
+    type:String,
+    require:true,
+  },
+
+  price:{
+    type:Number,
+    require:true,
+  },
+
+})
 
 </script>
 

@@ -1,5 +1,6 @@
 <template>
-  <UDropdown  :items="items" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-start' }">
+  <div v-if="pending" class="">loading...</div>
+  <UDropdown  v-else :items="items" :ui="{ item: { disabled: 'cursor-text select-text' } }" :popper="{ placement: 'bottom-start' }">
     <UAvatar src="https://avatars.githubusercontent.com/u/739984?v=4" />
 
     <template #account="{ item }">
@@ -7,7 +8,10 @@
         <p>
           Signed in as
         </p>
-        <p class="truncate font-medium text-gray-900 dark:text-white">
+        <p v-if="item.label==='email'" class="truncate font-medium text-gray-900 dark:text-white">
+          {{ user?.email}}
+        </p>
+        <p v-else class="truncate font-medium text-gray-900 dark:text-white">
           {{ item.label }}
         </p>
       </div>
@@ -31,9 +35,53 @@
 <script lang="ts" setup>
 import useAuth from '~/composables/useAuth';
 
+
+
+const {initAuth}=useAuth()
+
+
+onBeforeUnmount(()=>{
+  initAuth();
+})
+
+
+
+const {data:user,pending}=useFetch("/api/auth/user",{
+  lazy: false,
+  server:false,
+})
+
+
+
+
+
+
+
+definePageMeta({
+  middleware: "auth",
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const items = [
   [{
-    label: 'ben@example.com',
+    label: "email",
     slot: 'account',
     disabled: true
   }], [{
@@ -54,24 +102,6 @@ const items = [
   }]
 ]
 
-
-const {useAuthUser,initAuth}=useAuth()
-const user=useAuthUser()
-
-onBeforeUnmount(()=>{
-  initAuth();
-})
-
-console.log("user: " , user.value);
-
-
-
-
-
-
-definePageMeta({
-  middleware: "auth",
-});
 </script>
 
 
