@@ -12,6 +12,13 @@ return prisma.lesson.create({
 //get lesson by id
 export const getLessonById=(id:string)=>{
 return prisma.lesson.findFirst({
-  where:{id:id}
+  where:{id:id},
+  include:{
+    module:{
+      include:{
+        course:true
+      }
+    }
+  }
 })
 }

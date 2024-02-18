@@ -47,7 +47,7 @@
       </div>
      <div class="p-2 space-y-2">
       <template v-for="(lesson,i) in item.lessons" :key="i">
-       <ULink :to="`/tutorial/course/${courseId}/lesson/${item.id}`"
+       <ULink :to="`/tutorial/course/${courseId}/lesson/${lesson.id}`"
     active-class="text-primary flex justify-between border-b border-gray-100 dark:border-gray-700 "
     inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex justify-between border-b border-gray-100 dark:border-gray-700 " > 
         <p class="space-x-3"><span>{{ i+1 }}</span><span>{{ lesson.title }}</span></p>

@@ -11,8 +11,9 @@ return sendError(event,
   }))
     }
 const lessonId=id.lessonId
-    const lesson=await getLessonById(lessonId.toString())
-    return lesson
+    const lesson= await getLessonById(lessonId.toString())
+ 
+    return {...lesson}
   }
   catch(err){
 return sendError(event,
