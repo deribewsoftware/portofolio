@@ -4,7 +4,7 @@
 
 
 
-  <div>
+  <div v-if="!user">
     <UButton 
     variant="ghost"
     class="text-base"
@@ -74,6 +74,11 @@ async function handleLogin() {
   
   
 }
+
+const {data:user}=useFetch("/api/auth/user",{
+  lazy: false,
+  server:false,
+})
 
 </script>
 
