@@ -12,7 +12,11 @@ export const createCourse=(courseData:any,userId:string)=>{
 
 //get all lists of courses
 export const getAllCourses=()=>{
-  return prisma.course.findMany();
+  return prisma.course.findMany({
+    include:{
+      modules:true,
+    }
+  });
 }
 
 // get course by Id

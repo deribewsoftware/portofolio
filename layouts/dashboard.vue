@@ -47,7 +47,8 @@ const items=[
 </script>
 
 <template>
-  <div class="px-48">
+  <TutorialNavbar/>
+  <div class="px-48 pt-12">
     <div class="grid grid-cols-12 gap-20">
       <div class="col-span-2">
        <div class="fixed overflow-y-auto top-20">

@@ -85,7 +85,10 @@ const blogData=reactive({
   loadingCourseCreate:false,
 })
 
-async function submitBlog() { blogData.loadingCourseCreate = true
+async function submitBlog() { 
+  
+  
+  blogData.loadingCourseCreate = true
   try{
     await createBlog({
               title: blogData.title,

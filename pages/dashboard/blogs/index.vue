@@ -76,17 +76,17 @@ const todoStatus = [{
 
 const search = ref('')
 const selectedStatus = ref([])
-const searchStatus = computed(() => {
-  if (selectedStatus.value?.length === 0) {
-    return ''
-  }
+// const searchStatus = computed(() => {
+//   if (selectedStatus.value?.length === 0) {
+//     return ''
+//   }
 
-  if (selectedStatus?.value?.length > 1) {
-    return `?completed=${selectedStatus.value[0].value}&completed=${selectedStatus.value[1].value}`
-  }
+//   if (selectedStatus?.value?.length > 1) {
+//     return `?completed=${selectedStatus.value[0].value}&completed=${selectedStatus.value[1].value}`
+//   }
 
-  return `?completed=${selectedStatus.value[0].value}`
-})
+//   return `?completed=${selectedStatus.value[0].value}`
+// })
 
 const resetFilters = () => {
   search.value = ''

@@ -1,6 +1,6 @@
 <template>
   <div class="my-20 flex flex-col gap-20  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-    <h1>Create Course</h1>
+    <h1>Edit Course</h1>
     <UNotifications />
 
     <form @submit.prevent="submitCourse" class=" flex flex-col gap-10">
