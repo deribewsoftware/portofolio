@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>chapters list</h1>
+  <div class="min-h-screen flex">
+     <h1>Edit this Blog</h1>
   </div>
 </template>
 

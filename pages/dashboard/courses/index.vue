@@ -20,8 +20,17 @@
     :sort-button="{ icon: 'i-heroicons-sparkles-20-solid', color: 'primary', variant: 'outline', size: '2xs', square: false, ui: { rounded: 'rounded-full' } }"
     class="w-full"
     :columns="selectedColumns"
-    :rows="courses"
-  />
+    :rows="courses">
+
+    <template #name-data="{ row }">
+      <span >Deribew </span>
+    </template>
+    <template #actions-data="{ row }">
+      <UDropdown :items="items(row)">
+        <UButton color="gray" variant="ghost" icon="i-heroicons-ellipsis-horizontal-20-solid" />
+      </UDropdown>
+    </template>
+</UTable>
 
 
 
@@ -37,14 +46,35 @@ definePageMeta({
   layout:"dashboard"
 })
 
+
+
+const items = (row) => [
+  [{
+    label: 'Edit',
+    icon: 'i-heroicons-pencil-square-20-solid',
+    click: () => console.log('Edit', row.id)
+  }, {
+    label: 'Duplicate',
+    icon: 'i-heroicons-document-duplicate-20-solid'
+  }], [{
+    label: 'Archive',
+    icon: 'i-heroicons-archive-box-20-solid'
+  }, {
+    label: 'Move',
+    icon: 'i-heroicons-arrow-right-circle-20-solid'
+  }], [{
+    label: 'Delete',
+    icon: 'i-heroicons-trash-20-solid'
+  }]
+]
+
 const columns = [{ key: 'id', label: 'ID' },
  { key: 'title', label: 'Subject', sortable: true },
   { key: 'category', label: 'Category', sortable: true },
   { key: 'level', label: 'Level', sortable: true },
    { key: 'email', label: 'Learners', sortable: true }, 
    { key: 'price', label: 'Price', sortable: true },
-   { key: 'email', label: 'Chapters', sortable: true }, 
-   { key: 'role', label: 'Action' }]
+   { key: 'email', label: 'Chapters', sortable: true },]
 
 
 const selectedColumns = ref([...columns])

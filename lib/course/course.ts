@@ -19,6 +19,18 @@ export const getAllCourses=()=>{
 export const getCourseById=(id:string)=>{
   
   return prisma.course.findFirst({
+    include:{
+      reviews:{
+        include:{
+          user:true,
+        }
+      },
+      modules:{
+        include:{
+          lessons:true,
+        }
+      }
+    },
 
     where:{id:id}
   })

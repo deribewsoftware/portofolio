@@ -159,10 +159,13 @@
     <div class="flex flex-col gap-2 p-2">
       <TutorialHeader title="Comments"/>
      <div class="flex flex-col gap-10 mt-6">
-<TutorialReviews/>
-<TutorialReviews/>
-<TutorialReviews/>
-<TutorialReviews/>
+      <template v-for="review in course?.reviews">
+        <TutorialReviews
+        :name="review.user.name || ''"
+        :comment="review.comment"
+        />
+      </template>
+
       
      </div>
     </div>

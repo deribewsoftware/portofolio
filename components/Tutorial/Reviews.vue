@@ -6,7 +6,7 @@
   /></div>
         <div class="flex flex-col">
           <div class="flex flex-col md:flex-row justify-between md:px-4">
-            <h6>Deribew Shimelis</h6>
+            <h6>{{ name }}</h6>
             <p class="text-sm text-gray-500 dark:text-gray-400">22-02-2022</p>
           </div>
           <div class="flex">
@@ -27,15 +27,27 @@
     </svg>
           </div>
 
-          <p class="text-sm text-gray-500 dark:text-gray-400 py-4">This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday and the first thing I did was set the time, popped on an identical strap from another Invicta and went in the shower with it to test the waterproofing.... No problems.
-
-It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 py-4">{{ comment }}</p>
         </div>
       </div>
 </template>
 
 <script lang="ts" setup>
+defineProps({
+  name: {
+    type:String,
+    required:true,
+  },
+  cover:String,
+  comment:{
+    type:String,
+    required:true,
+  },
+  rating:{
+    type:Number,
 
+  }
+})
 </script>
 
 <style>
