@@ -1,5 +1,5 @@
 <template>
-  <div class="z-50 fixed bg-white dark:bg-gray-900 flex border-b border-gray-200 dark:border-gray-400 h-12 w-full flex justify-between items-center px-6 ">
+  <div class="z-50 fixed bg-white border-gray-200 dark:border-gray-700 dark:bg-gray-900 flex border-b border-gray-200 dark:border-gray-400 h-12 w-full flex justify-between items-center px-6 ">
     <div class="text-2xl font-extra-bold text-green-400">Deri Tech</div>
 
 

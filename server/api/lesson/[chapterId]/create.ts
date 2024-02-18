@@ -21,7 +21,9 @@ export default defineEventHandler(async (event) => {
     }
     const moduleId=id.chapterId
     const lessonData={
+
       moduleId,
+      title,
       videoCover,
       videoUrl
     }
@@ -30,6 +32,7 @@ export default defineEventHandler(async (event) => {
   }
 
   catch(err){
+    console.log(err)
     return sendError(event,
       createError({
         statusCode:500,

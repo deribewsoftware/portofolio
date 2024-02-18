@@ -1,4 +1,5 @@
 <template>
+   <UNotifications />
   <div class="min-h-screen w-full flex flex-col items-center pt-20 gap-10">
    
     <h1>Chapter id {{ chapterId }}</h1>
@@ -10,7 +11,7 @@
         <UiInput v-model="lessonData.VideoUrl" label="Video"/>
       </div>
       <div class="pt-10 flex justify-end">
-        <button class="border bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">{{loadingLessonCreate? "Loading...":"Submit"}}</button>
+        <button @click="submitLesson" class="border bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">{{loadingLessonCreate? "Loading...":"Submit"}}</button>
       </div>
     </div>
   </div>
@@ -50,7 +51,7 @@ async function submitLesson() {
 
   }
   catch(error){
-    
+    console.log(error)
     toast.add({ title: 'Lesson not ceated!' })
   }finally{ lessonData.loadingLessonCreate = false
   }

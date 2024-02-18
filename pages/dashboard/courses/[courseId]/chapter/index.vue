@@ -59,11 +59,15 @@
         Add Lesson
       </ULink>
       </div>
-     <p>listsshdddddddddddddddddddddddddddddddddddddddddddd</p>
-     <p>listsshdddddddddddddddddddddddddddddddddddddddddddd</p> 
-     <p>listsshdddddddddddddddddddddddddddddddddddddddddddd</p>  
-     <p>listsshdddddddddddddddddddddddddddddddddddddddddddd</p>
-      <p>listsshdddddddddddddddddddddddddddddddddddddddddddd</p>
+     <div class="p-2 space-y-2">
+      <template v-for="(lesson,i) in item.lessons" :key="i">
+       <div class="flex justify-between border-b border-gray-100 dark:border-gray-700"> 
+        <p class="space-x-3"><span>{{ i+1 }}</span><span>{{ lesson.title }}</span></p>
+        <div class="">Actions</div>
+      </div>
+
+      </template>
+     </div>
     </div>
    </div>
     </template>

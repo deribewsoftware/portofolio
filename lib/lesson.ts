@@ -8,3 +8,10 @@ return prisma.lesson.create({
   data:lessonData
 })
 }
+
+//get lesson by id
+export const getLessonById=(id:string)=>{
+return prisma.lesson.findFirst({
+  where:{id:id}
+})
+}
