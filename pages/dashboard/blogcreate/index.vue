@@ -32,7 +32,7 @@
       </div>
 
     </form>
-    <div class="" @click="toast.add({ title: 'Hello world!' })" >toast</div>
+    
   </div>
 </template>
 

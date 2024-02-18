@@ -1,11 +1,12 @@
 <template>
+    <UNotifications />
   <div class="min-h-screen flex  flex-col jitems-center pt-20 ">
     <div class="flex  w-full">
       <UiInput
       label="Chapter Title"
       v-model="chapterData.title"
       />
-      <div class=""><button class="text-sm bg-gray-200 dark:bg-gray-700 p-1 rounded-md border hover:border-green-400 ">Add</button></div>
+      <div class=""><button @click="addChapter" class="text-sm bg-gray-200 dark:bg-gray-700 p-1 rounded-md border hover:border-green-400 ">Add</button></div>
     </div>
     <div class="mt-10 flex flex-col gap-6">
       <h1>Chapters List</h1>
@@ -63,7 +64,7 @@ const chapterData=reactive({
   loadingCourseCreate:false,
 })
 
-async function submitBlog() { chapterData.loadingCourseCreate = true
+async function addChapter() { chapterData.loadingCourseCreate = true
   try{
     await createChapter({
               title: chapterData.title,

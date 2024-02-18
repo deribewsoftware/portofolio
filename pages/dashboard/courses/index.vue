@@ -120,17 +120,17 @@ const items = (row:any) => [
     label: 'Edit',
     icon: 'i-heroicons-pencil-square-20-solid',
    
-    click: () => router.push({ path: "/dashboard/courses/6283yh/edit" })
+    click: () => router.push({ path: `/dashboard/courses/${row.id}/edit` })
   },],[
   {
     label: 'Chapters',
     icon: 'i-heroicons-document-duplicate-20-solid',
-    click: () => router.push({ path: "/dashboard/courses/6283yh/edit" })
+    click: () => router.push({ path: `/dashboard/courses/${row.id}/edit`})
   },
   {
     label: 'Add Chapter',
     icon: 'i-heroicons-add-20-solid',
-    click: () => router.push({ path: "/dashboard/courses/6283yh/createchapter" })
+    click: () => router.push({ path: `/dashboard/courses/${row.id}/createchapter` })
   }
   ], [{
     label: 'Archive',
