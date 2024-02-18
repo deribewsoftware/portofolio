@@ -15,15 +15,15 @@ const columns = [{
   label: 'Title',
   sortable: true
 }, {
-  key: 'completed',
-  label: 'Status',
+  key: 'category',
+  label: 'Category',
   sortable: true
 },
 
 {
-  key: 'chapters',
-  label: 'Chapters',
-  sortable: false
+  key: 'createdAt',
+  label: 'Date Created',
+  sortable: true
 },
  {
   key: 'actions',
@@ -102,11 +102,12 @@ const pageFrom = computed(() => (page.value - 1) * pageCount.value + 1)
 const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.value))
 
 // Data
+// `https://jsonplaceholder.typicode.com/todos${searchStatus.value}`
 const { data: todos, pending } = await useLazyAsyncData<{
   id: number
   title: string
   completed: string
-}[]>('todos', () => ($fetch as any)(`https://jsonplaceholder.typicode.com/todos${searchStatus.value}`, {
+}[]>('todos', () => ($fetch as any)("/api/blogs/list", {
   query: {
     q: search.value,
     '_page': page.value,
@@ -118,6 +119,12 @@ const { data: todos, pending } = await useLazyAsyncData<{
   default: () => [],
   watch: [page, search, searchStatus, pageCount, sort]
 })
+
+
+
+
+
+
 </script>
 
 <template>
@@ -144,7 +151,11 @@ const { data: todos, pending } = await useLazyAsyncData<{
     <div class="flex items-center justify-between gap-3 px-4 py-3">
       <UInput v-model="search" icon="i-heroicons-magnifying-glass-20-solid" placeholder="Search..." />
 
-      <USelectMenu v-model="selectedStatus" :options="todoStatus" multiple placeholder="Status" class="w-40" />
+     <ULink  to="/dashboard/blogcreate" active-class="flex gap-1 text-primary"
+    inactive-class=" flex gap-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"> <div class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+</div> <p>Create Blog</p></ULink>
     </div>
 
     <!-- Header and Action buttons -->
@@ -209,17 +220,7 @@ const { data: todos, pending } = await useLazyAsyncData<{
       :ui="{ td: { base: 'max-w-[0] truncate' } }"
       @select="select"
     >
-      <template #completed-data="{ row }">
-        <UBadge size="xs" :label="row.completed ? 'Completed' : 'In Progress'" :color="row.completed ? 'emerald' : 'orange'" variant="subtle" />
-      </template>
-
-
-
-
-
-<template #chapters-data="{row}">
-  <UButton  variant="ghost" color="white"  trailing-icon="i-heroicons-chevron-down-20-solid" />
-</template>
+      
 
 
 

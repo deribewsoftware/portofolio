@@ -1,3 +1,6 @@
+import { RefreshToken } from "~/lib/refreshToken";
+import { GenerateTokens } from "~/lib/tokens/generateTokens";
+import { SetRefreshToken } from "~/lib/tokens/refreshToken";
 import { userTransformer } from "~/lib/transformers/user.transformer";
 import { createUser } from "~/lib/user";
 
@@ -31,5 +34,22 @@ const userData={
 }
 
 const user = await createUser(userData)
-return { user: userTransformer(user)}
+// generate token
+const {accessToken,refreshToken}=GenerateTokens(user)
+
+// save refresh token inside database
+await RefreshToken({
+  token:refreshToken,
+  userId:user!.id
+})
+
+// save token in Cookie
+SetRefreshToken(event,refreshToken)
+
+
+return {
+  accessToken,
+  user:user!,
+
+}
 })

@@ -30,7 +30,7 @@ return new Promise(async (resolve, reject)=>{
     })
 setToken(data.accessToken);
 setUser(data.user);
-localStorage.setItem("user",JSON.stringify(data.user));
+
 console.log("login data",data);
 resolve(true);
 
@@ -44,6 +44,42 @@ resolve(true);
 })
 
   }
+
+
+
+// register user or Signup
+const signupUser =(userData:any)=>{
+
+  return new Promise(async (resolve, reject)=>{
+    try {
+      const data = await $fetch("/api/auth/register",{
+        method: "POST",
+        body:{
+          name:userData.name,
+          email:userData.email,
+          password:userData.password,
+          repeatPassword:userData.repeatPassword
+        }
+      })
+  setToken(data.accessToken);
+  setUser(data.user);
+ 
+  console.log("login data",data);
+  resolve(true);
+  
+    }
+    catch (err){
+      console.log("login err",err);
+      reject(err);
+  
+    }
+  
+  })
+  
+    }
+  
+  
+    
 
 
   const refreshToken =()=>{
@@ -99,6 +135,7 @@ resolve(true);
     login,
     useAuthUser,
     initAuth,
-    useAuthToken
+    useAuthToken,
+    signupUser
   }
 }
