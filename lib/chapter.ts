@@ -9,4 +9,8 @@ export const createChapter=(chapterData:any)=>{
 
 //get all list of chapters
 
-export const getAllChapters =()=>prisma.module.findMany();
+export const getAllChapters =()=>prisma.module.findMany({
+  include:{
+    lessons:true
+  }
+});

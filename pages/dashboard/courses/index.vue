@@ -1,7 +1,5 @@
-
-
 <script lang="ts" setup>
-
+const router=useRouter()
 
 definePageMeta({
   layout:"dashboard"
@@ -14,16 +12,11 @@ const columns = [{
   sortable: true
 }, {
   key: 'title',
-  label: 'Subject',
+  label: 'Title',
   sortable: true
 }, {
   key: 'category',
   label: 'Category',
-  sortable: true
-},
-{
-  key: 'modules',
-  label: 'Chapers',
   sortable: true
 },
 
@@ -31,20 +24,36 @@ const columns = [{
   key: 'createdAt',
   label: 'Date Created',
   sortable: true
-},
-{
+},{
+  key: 'modules',
+  label: 'No.Chapter',
+  sortable: true
+},{
   key: 'price',
   label: 'Price(ETB)',
   sortable: true
 },
-
-
  {
   key: 'actions',
-  
+  label: 'Actions',
   sortable: false
 }]
 
+const items = (row:any) => [
+  [{
+    label: 'Edit',
+    icon: 'i-heroicons-pencil-square-20-solid',
+    click: () => router.push({path:`/dashboard/courses/${row.id}/edit`})
+  }, {
+    label: 'Chapter',
+    icon: 'i-heroicons-document-duplicate-20-solid',
+    click: () => router.push({path:`/dashboard/courses/${row.id}/chapter`})
+  },{
+    label: 'Delete',
+    icon: 'i-heroicons-trash-20-solid',
+    click: () => router.push({path:`/dashboard/courses/${row.id}/delete`})
+  }]
+]
 const selectedColumns = ref(columns)
 const columnsTable = computed(() => columns.filter((column) => selectedColumns.value.includes(column)))
 
@@ -59,19 +68,6 @@ function select (row:any) {
     selectedRows.value.splice(index, 1)
   }
 }
-
-// Actions
-const actions = [
-  [{
-    key: 'completed',
-    label: 'Completed',
-    icon: 'i-heroicons-check'
-  }], [{
-    key: 'uncompleted',
-    label: 'In Progress',
-    icon: 'i-heroicons-arrow-path'
-  }]
-]
 
 
 
@@ -110,39 +106,12 @@ const { data: todos, pending } = await useLazyAsyncData<{
   }
 }), {
   default: () => [],
-  watch: [page, search, pageCount, sort]
+  watch: [page, search,  pageCount, sort]
 })
 
-const router=useRouter()
 
-const items = (row:any) => [
-  [{
-    label: 'Edit',
-    icon: 'i-heroicons-pencil-square-20-solid',
-   
-    click: () => router.push({ path: `/dashboard/courses/${row.id}/edit` })
-  },],[
-  {
-    label: 'Chapters',
-    icon: 'i-heroicons-document-duplicate-20-solid',
-    click: () => router.push({ path: `/dashboard/courses/${row.id}/edit`})
-  },
-  {
-    label: 'Add Chapter',
-    icon: 'i-heroicons-add-20-solid',
-    click: () => router.push({ path: `/dashboard/courses/${row.id}/createchapter` })
-  }
-  ], [{
-    label: 'Archive',
-    icon: 'i-heroicons-archive-box-20-solid'
-  }, {
-    label: 'Move',
-    icon: 'i-heroicons-arrow-right-circle-20-solid'
-  }], [{
-    label: 'Delete',
-    icon: 'i-heroicons-trash-20-solid'
-  }]
-]
+
+
 
 
 </script>
@@ -161,7 +130,7 @@ const items = (row:any) => [
   >
     <template #header>
       <h2 class="font-semibold text-xl text-gray-900 dark:text-white leading-tight">
-        Courses List
+        Todos
       </h2>
     </template>
 
@@ -171,11 +140,11 @@ const items = (row:any) => [
     <div class="flex items-center justify-between gap-3 px-4 py-3">
       <UInput v-model="search" icon="i-heroicons-magnifying-glass-20-solid" placeholder="Search..." />
 
-     <ULink  to="/dashboard/blogcreate" active-class="flex gap-1 text-primary"
+     <ULink  to="/dashboard/coursecreate" active-class="flex gap-1 text-primary"
     inactive-class=" flex gap-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"> <div class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 </svg>
-</div> <p>Create Blog</p></ULink>
+</div> <p>Create Course</p></ULink>
     </div>
 
     <!-- Header and Action buttons -->
@@ -243,19 +212,17 @@ const items = (row:any) => [
       
 
 
-<template #modules-data="{row}">
-  <p>{{ row.modules.length }}</p>
 
+<template #modules-data="{row}">
+  <p>{{ row.modules.length }} chapters</p>
 </template>
 
 
 
 
-
-<template #actions-data="{ row }">
+    <template #actions-data="{ row }">
       <UDropdown :items="items(row)">
         <UButton color="gray" variant="ghost" icon="i-heroicons-ellipsis-horizontal-20-solid" />
-
       </UDropdown>
     </template>
     </UTable>
@@ -293,14 +260,3 @@ const items = (row:any) => [
     </template>
   </UCard>
 </template>
-
-
-
-
-
-
-
-
-
-
-

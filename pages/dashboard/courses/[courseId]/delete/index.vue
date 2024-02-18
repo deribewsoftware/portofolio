@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Delete course</h1>
+    <h1>delete chapter</h1>
   </div>
 </template>
 
@@ -8,7 +8,6 @@
 definePageMeta({
   layout:"dashboard"
 })
-
 </script>
 
 <style>
