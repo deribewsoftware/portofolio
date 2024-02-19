@@ -44,13 +44,34 @@
     </div>
 
 <div  v-if="isTitle || isContent || isList || isImage" class="flex bg-gray-50 border-gray-100 dark:border-gray-600 dark:bg-gray-700 flex-col w-full border p-4 rounded-lg">
-<UiInput v-model="contentData.title" v-if="isTitle" label="Title"/>
+<div class="relative ">
+  <UiInput v-model="contentData.title" v-if="isTitle" label="Title"/>
+  <button v-if="contentData.title!==''" class="absolute  hover:bg-rose-300 transition duration-300 hover:text-rose-600 rounded-md hover:dark:text-rose-600  -top-1 right-5 text-gray-500 dark:text-gray-400" @click="contentData.title=''"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+<div class="relative ">
+<UiTextarea  v-model="contentData.content"  v-if="isContent" label="Contents"/>
+<button v-if="contentData.content!==''" class="absolute  hover:bg-rose-300 transition duration-300 hover:text-rose-600 rounded-md hover:dark:text-rose-600  -top-1 right-5 text-gray-500 dark:text-gray-400" @click="contentData.content=''"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
 
-<UiTextarea v-model="contentData.content"  v-if="isContent" label="Contents"/>
 
+<div class="relative ">
 <UiTextarea v-model="contentData.list" v-if="isList" label="List"/>
+<button v-if="contentData.list!==''" class="absolute  hover:bg-rose-300 transition duration-300 hover:text-rose-600 rounded-md hover:dark:text-rose-600  -top-1 right-5 text-gray-500 dark:text-gray-400" @click="contentData.list=''"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+
+
+
 <input  v-if="isImage" type="file"/>
-<div class="flex justify-end py-6 px-2">  <button class="bg-gray-200 dark:bg-gray-600 px-2 py-1 rounded-md">Add</button></div>
+<div class="flex justify-end py-6 px-2">  <button @click="handleAddContent" class="bg-gray-200 dark:bg-gray-600 px-2 py-1 rounded-md">Add</button></div>
 </div>
 
   </div>
@@ -66,15 +87,19 @@ const contentData=reactive({
   image:null
 })
 
-console.log("contentData", contentData);
+const emits=defineEmits(["addContent"])
 const isTitle = ref(false);
 const isContent= ref(false);
 const isList= ref(false);
 const isImage= ref(false);
 
-defineProps({
+const handleAddContent = () => {
+  // Emit the 'addContent' event
+  emits('addContent', contentData);
   
-})
+};
+
+
 </script>
 
 <style>

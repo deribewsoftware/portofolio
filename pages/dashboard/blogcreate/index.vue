@@ -3,7 +3,34 @@
     <h1>Create Blog</h1>
     <UNotifications />
 
-    <form  class=" flex flex-col gap-10">
+<div class="py-20 space-y-6">
+  <h1>{{ blogData.title }}</h1>
+
+  <template v-for="(content,i) in contentData" :key="i">
+    <div class="">
+     <h3 class="font-bold">contents{{ content}}</h3>
+     <ul v-if="content.list!==''">
+      <li>{{ content.list }}</li>
+     </ul>
+     <p v-if="content.content!==''">{{ content.content }}</p>
+    </div>
+  </template>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class=" flex flex-col gap-10">
 
       
       <div class="grid grid-cols-1 md:grid-cols-2  gap-20  px-4">
@@ -27,7 +54,7 @@
       </div>
       <div class="py-6 px-4 w-full">
        
-        <Chips/>
+        <Chips @addContent="handleAddContent" />
          
         
       </div>
@@ -37,7 +64,7 @@
         <button @click="submitBlog" class="px-2 py-1 rounded border bg-gray-200 dark:bg-gray-700 hover:dark:bg-gray-600 transition duration:300">{{ loadingCourseCreate? "Loading...":"Submit"}}</button>
       </div>
 
-    </form>
+    </div>
     
   </div>
 </template>
@@ -72,14 +99,29 @@ async function search (q: string) {
   return categories
 }
 
+const contData={
+  title:null,
+  image:null,
+  content:null,
+  list:null,
+}
 
+const contentData:any[]=[]
+const  handleAddContent=(data:any) =>{
+  contData.title=data.title
+  contData.image=data.image
+  contData.content=data.content
+  contData.list=data.list
+  contentData.push(data)
+     
+     
 
+      
+    }
+ 
+      
 
-
-
-
-
-
+    console.log('Received content data:', contentData);
 const loadingCourseCreate=ref(false)
 
 const {createBlog}=UseBlog();
