@@ -117,7 +117,7 @@ const { data: todos, pending } = await useLazyAsyncData<{
   }
 }), {
   default: () => [],
-  watch: [page, search, searchStatus, pageCount, sort]
+  watch: [page, search, pageCount, sort]
 })
 
 

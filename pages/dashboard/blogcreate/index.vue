@@ -3,7 +3,7 @@
     <h1>Create Blog</h1>
     <UNotifications />
 
-    <form @submit.prevent="submitBlog" class=" flex flex-col gap-10">
+    <form  class=" flex flex-col gap-10">
 
       
       <div class="grid grid-cols-1 md:grid-cols-2  gap-20  px-4">
@@ -25,10 +25,16 @@
         <UiInput label="Course Cover" v-model= "blogData.cover" />
         <UiInput label="Course Title" v-model= "blogData.title"/>
       </div>
+      <div class="py-6 px-4 w-full">
+       
+        <Chips/>
+         
+        
+      </div>
 
       <div class="py-10 flex w-full justify-end pr-10">
 
-        <button type="submit" class="px-2 py-1 rounded border bg-gray-200 dark:bg-gray-700 hover:dark:bg-gray-600 transition duration:300">{{ loadingCourseCreate? "Loading...":"Submit"}}</button>
+        <button @click="submitBlog" class="px-2 py-1 rounded border bg-gray-200 dark:bg-gray-700 hover:dark:bg-gray-600 transition duration:300">{{ loadingCourseCreate? "Loading...":"Submit"}}</button>
       </div>
 
     </form>
@@ -37,6 +43,7 @@
 </template>
 
 <script lang="ts" setup>
+
 import { ref } from 'vue';
 import { UseBlog } from '~/composables/blog';
 const toast = useToast()
@@ -107,6 +114,18 @@ async function submitBlog() {
   
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <style>
