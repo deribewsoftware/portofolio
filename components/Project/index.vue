@@ -43,7 +43,7 @@ const portfolios = [
     { name: "Redis", icon: Redis },
     { name: "Vercel", icon:Vercel},
   ],
-  demoUrl: "https://shadcn-ui-teal.vercel.app/",
+  demoUrl: "https://ethio-exams-academy.vercel.app",
   github: "https://github.com/deribewsoftware/shadcn_Ui"
 }
 ,
