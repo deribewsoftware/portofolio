@@ -4,6 +4,11 @@ export default defineNuxtConfig({
  
   devtools: { enabled: true },
   modules:["@nuxt/ui", "nuxt-icon",'@vueuse/motion/nuxt','@sidebase/nuxt-pdf','dayjs-nuxt'],
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    plugins: ['relativeTime', 'advancedFormat'],
+},
   runtimeConfig: {
     public: {
       motion: {

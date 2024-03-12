@@ -24,6 +24,7 @@
     "@blowstack/ckeditor5-full-free-build": "^27.0.1",
     "@ckeditor/ckeditor5-vue": "^5.1.0",
     "@nuxt/ui": "^2.13.0",
+    "@nuxtjs/dayjs": "^1.4.1",
     "@prisma/client": "^5.9.1",
     "@vueuse/motion": "^2.0.0-beta.29",
     "bcrypt": "^5.1.1",
