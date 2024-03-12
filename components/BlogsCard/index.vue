@@ -6,7 +6,7 @@
     </div>
     <div class="flex flex-col p-2">
       <div class="flex justify-end">
-        <p class="text-sm text-gray-500 dark:text-gray-400 font-bold"> {{ date }} days ago</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 font-bold"> posted {{ $dayjs(date).fromNow() }}</p>
       </div>
       <h2 class="text-lg font-bold">{{ title }}</h2>
       <div class="p-2">

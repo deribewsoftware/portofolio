@@ -1,9 +1,7 @@
 <template>
   
   <div class=" md:py-20">
-    <div class="absolute w-[350px] md:w-[400px]">
-      <AuthLogin/>
-    </div>
+    
           <Hero/>
           <div
            v-motion 
@@ -61,46 +59,7 @@ useSeoMeta({
 })
 
 
-const navbardata=[
-  {
-    name:"About",
-    href:"#about"
-  },{
-    name:"Education",
-    href:"#education"
-  },{
-    name:"Exprience",
-    href:"#exprience"
-  },{
-    name:"Skill",
-    href:"#skill"
-  },{
-    name:"Portfolio",
-    href:"#portfolio"
-  },
-  {
-    name:"Service",
-    href:"#service"
-  },
-  {
-    name:"Testmonies",
-    href:"#testmony"
-  },
-  {
-    name:"Contact",
-    href:"#contact"
-  },
-]
 
-const colorMode = useColorMode()
-const isDark = computed({
-  get () {
-    return colorMode.value === 'dark'
-  },
-  set () {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-  }
-})
 
 
 

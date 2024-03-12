@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-10 pt-10">
-    <h1 class="p-4 text-5xl font-bold">Deribew's Blogs</h1>
+    <h1 class="p-4 mb-4 text-5xl font-bold">Deribew's Blogs</h1>
     <div class="w-full flex flex-col gap-10 justify-center items-center ">
 
 <template v-for="blog in blogs" :key="blog.id">
@@ -8,8 +8,8 @@
   :id="blog.id"
   :category="blog.category"
   :title="blog.title"
-  :description="'Next.js is a popular open-source React framework that enables developers to build web applications with enhanced performance and developer experience. It is designed to simplify the creation of server-rendered React applications by providing a set of conventions and features...'"
-  :date="'22-01-2024'"
+  :description="blog.description"
+  :date="blog.createdAt"
   :cover="blog.cover || ''"
   />
 </template>
