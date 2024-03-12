@@ -10,7 +10,7 @@
       </div>
       <h2 class="text-lg font-bold">{{ title }}</h2>
       <div class="p-2">
-        <p class="text-gray-600 dark:text-gray-400 overflow-hidden whitespace-nowrap overflow-ellipsis">{{ description }}</p>
+        <div class="line-clamp-3 text-gray-600 dark:text-gray-400 overflow-hidden whitespace-nowrap overflow-ellipsis" v-html="description" ></div>
    
       </div>
     </div>
